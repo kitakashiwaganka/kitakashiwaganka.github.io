@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>北かしわ眼科 | JR北柏駅南口の眼科</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    }
+    body {
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.7;
+    }
+    a {
+      color: #1565c0;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    header {
+      background: linear-gradient(135deg, #1976d2, #00bcd4);
+      color: #fff;
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .logo-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .logo-title {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    .logo-sub {
+      font-size: 12px;
+      opacity: 0.85;
+    }
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      font-size: 13px;
+    }
+    .tel {
+      font-size: 18px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 13px;
+    }
+    nav a {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      color: #e3f2fd;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,0.25);
+      text-decoration: none;
+    }
+    .hero {
+      background: #e3f2fd;
+      padding: 40px 16px 32px;
+      border-bottom: 1px solid #d0d9ff;
+    }
+    .hero-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+    }
+    .hero-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .hero-lead {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #fff;
+      color: #1976d2;
+      margin-bottom: 10px;
+      border: 1px solid #bbdefb;
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .btn-primary {
+      background: #1976d2;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(25,118,210,0.35);
+    }
+    .btn-primary:hover {
+      background: #11529b;
+    }
+    .btn-outline {
+      background: transparent;
+      color: #1976d2;
+      border: 1px solid #90caf9;
+    }
+    .hero-info-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      font-size: 13px;
+    }
+    .hero-info-card h3 {
+      font-size: 15px;
+      margin-bottom: 8px;
+      border-left: 4px solid #1976d2;
+      padding-left: 8px;
+    }
+    .info-row {
+      margin-bottom: 6px;
+    }
+    .info-label {
+      font-weight: 600;
+      margin-right: 4px;
+    }
+    .wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+    .section {
+      background: #fff;
+      border-radius: 20px;
+      padding: 22px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 18px rgba(15,35,95,0.06);
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      border-left: 4px solid #1976d2;
+      padding-left: 10px;
+    }
+    .section-kicker {
+      font-size: 11px;
+      color: #78909c;
+    }
+    .section-body {
+      font-size: 14px;
+    }
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .pill-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .pill-list li {
+      font-size: 12px;
+      padding: 4px 10px;
+      background: #e3f2fd;
+      border-radius: 999px;
+    }
+    table.schedule {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+    table.schedule th,
+    table.schedule td {
+      border: 1px solid #e0e0e0;
+      padding: 6px 4px;
+      text-align: center;
+    }
+    table.schedule th {
+      background: #f1f5ff;
+      font-weight: 600;
+    }
+    table.schedule td.closed {
+      background: #fafafa;
+      color: #b0bec5;
+    }
+    .notice-list {
+      list-style: none;
+      font-size: 13px;
+    }
+    .notice-list li {
+      margin-bottom: 6px;
+      padding-left: 14px;
+      position: relative;
+    }
+    .notice-list li::before {
+      content: "・";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .muted {
+      font-size: 12px;
+      color: #78909c;
+      margin-top: 4px;
+    }
+    .doctor-name {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .doctor-title {
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+    .list-dot {
+      margin-left: 1em;
+      padding-left: 0;
+    }
+    .list-dot li {
+      margin-bottom: 4px;
+    }
+    .chip {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #f5f5f5;
+      margin: 2px 4px 2px 0;
+    }
+    footer {
+      background: #102a43;
+      color: #cfd8dc;
+      font-size: 11px;
+      padding: 16px;
+      margin-top: 16px;
+    }
+    .footer-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 768px) {
+      .hero-inner,
+      .two-column {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero {
+        padding-top: 28px;
+      }
+      .hero-title {
+        font-size: 22px;
+      }
+      .header-inner {
+        justify-content: center;
+        text-align: center;
+      }
+      .header-right {
+        align-items: center;
+      }
+      nav {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo-block">
+      <div class="logo-title">北かしわ眼科</div>
+      <div class="logo-sub">JR北柏駅南口すぐの眼科専門クリニック</div>
+    </div>
+    <div class="header-right">
+      <div>〒277-0832 千葉県柏市北柏１−１−３</div>
+      <div class="tel">TEL 04-7165-1551</div>
+      <nav>
+        <a href="#about">医院について</a>
+        <a href="#service">診療案内</a>
+        <a href="#hours">診療時間</a>
+        <a href="#doctor">医師紹介</a>
+        <a href="#access">アクセス</a>
+        <a href="#notice">お知らせ</a>
+        <a href="#contactlens">コンタクトレンズ</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="badge">JR北柏駅 南口からすぐ ／ 医院は1階です</span>
+      <h1 class="hero-title">地域の皆さまの「見える」を支える<br>北かしわ眼科</h1>
+      <p class="hero-lead">
+        北かしわ眼科は、眼科専門医と視能訓練士による診療を行う、<br>
+        JR北柏駅南口そばの眼科クリニックです。<br>
+        角膜・結膜疾患、白内障、緑内障、網膜疾患など、<br>
+        目のことで気になることがありましたらご相談ください。
+      </p>
+      <div class="hero-buttons">
+        <a href="#first" class="btn btn-primary">初めて受診される方へ</a>
+        <a href="#hours" class="btn btn-outline">診察受付時間を見る</a>
+      </div>
+    </div>
+    <div class="hero-info-card">
+      <h3>診察受付時間</h3>
+      <div class="info-row">
+        <span class="info-label">午前</span>10:00〜13:00
+      </div>
+      <div class="info-row">
+        <span class="info-label">午後</span>14:30〜17:30
+      </div>
+      <div class="info-row">
+        <span class="info-label">休診日</span>木曜・日曜・祝日
+      </div>
+      <p class="muted">
+        ※混雑時はお待ち頂く場合があります。<br>
+        待合室で座れない方が出ている場合、診察まで少なくとも1時間以上かかるとお考えください。
+      </p>
+    </div>
+  </div>
+</section>
+
+<main class="wrapper">
+  <section id="about" class="section">
+    <div class="section-header">
+      <h2 class="section-title">医院について</h2>
+      <span class="section-kicker">About Clinic</span>
+    </div>
+    <div class="section-body two-column">
+      <div>
+        <p>
+          北かしわ眼科は、JR北柏駅南口すぐの場所にある眼科クリニックです。<br>
+          令和2年5月に、柏福眼科から名称変更および移転を行い、現在の場所で診療を行っています。
+        </p>
+        <p style="margin-top:8px;">
+          眼科専門医による診療と、視能訓練士（認定視能訓練士を含む）による各種検査を組み合わせ、<br>
+          患者様一人ひとりに合わせた検査・診断・治療を心がけています。
+        </p>
+        <ul class="pill-list">
+          <li>眼科専門医による診察</li>
+          <li>視能訓練士による丁寧な検査</li>
+          <li>JR北柏駅から徒歩すぐ</li>
+          <li>病診連携によるスムーズな紹介</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:14px; margin-bottom:6px;">主な診療内容</h3>
+        <ul class="list-dot">
+          <li>角膜疾患・結膜疾患</li>
+          <li>白内障</li>
+          <li>緑内障</li>
+          <li>網膜疾患 など</li>
+        </ul>
+        <p class="muted">
+          その他、目に関するお悩みや不安がありましたら、お気軽にご相談ください。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="service" class="section">
+    <div class="section-header">
+      <h2 class="section-title">診療案内</h2>
+      <span class="section-kicker">Medical Services</span>
+    </div>
+    <div class="section-body">
+      <p>
+        北かしわ眼科では、一般眼科診療を中心に、白内障・緑内障・網膜疾患などの診療を行っています。
+      </p>
+      <p style="margin-top:6px;">
+        Shared Decision Making（共同意志決定）を意識し、医師から治療の選択肢を提示した上で、<br>
+        患者様ご自身に治療内容を選んでいただくことを大切にしています。
+      </p>
+      <div class="two-column" style="margin-top:10px;">
+        <div>
+          <h3 style="font-size:14px; margin-bottom:6px;">受診の流れ</h3>
+          <p id="first">
+            <strong>初診の方：</strong><br>
+            視力検査 → 診察・処置 → 各種検査 → 診察・処置
+          </p>
+          <p style="margin-top:6px;">
+            <strong>再診の方：</strong><br>
+            各種検査（視力を含む）→ 診察・処置
+          </p>
+          <p style="margin-top:6px; font-size:13px;">
+            ※充血・目やに等があり感染性結膜炎が強く疑われる場合は、先に診察を行うことがあります。<br>
+            ※網膜疾患や白内障がある場合、瞳を開く検査が必要になることがあります。<br>
+            瞳を開く目薬を使用した後は、4〜5時間程度は車の運転をお控えください。
+          </p>
+        </div>
+        <div>
+          <h3 style="font-size:14px; margin-bottom:6px;">ご来院時のお願い</h3>
+          <ul class="list-dot">
+            <li>保険証や医療券を必ずお持ちください（確認できない場合は一時自費扱いとなります）。</li>
+            <li>手荷物は患者様ご自身で管理をお願いいたします。</li>
+            <li>受診とは関係ない方の来院は必要最小限（保護者等は可）でお願いいたします。</li>
+            <li>待合室では、他の患者様のご迷惑にならないよう静かにお待ちください。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hours" class="section">
+    <div class="section-header">
+      <h2 class="section-title">診察受付時間</h2>
+      <span class="section-kicker">Consultation Hours</span>
+    </div>
+    <div class="section-body two-column">
+      <div>
+        <table class="schedule">
+          <thead>
+            <tr>
+              <th>診察受付時間</th>
+              <th>月</th>
+              <th>火</th>
+              <th>水</th>
+              <th>木</th>
+              <th>金</th>
+              <th>土</th>
+              <th>日・祝</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>午前 10:00〜13:00</th>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td class="closed">－</td>
+              <td>●</td>
+              <td>●</td>
+              <td class="closed">－</td>
+            </tr>
+            <tr>
+              <th>午後 14:30〜17:30</th>
+              <td>●</td>
+              <td>●</td>
+              <td>●</td>
+              <td class="closed">－</td>
+              <td>●</td>
+              <td>●</td>
+              <td class="closed">－</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="muted">
+          木曜日・日曜日・祝日は休診です。
+        </p>
+      </div>
+      <div>
+        <h3 style="font-size:14px; margin-bottom:6px;">休診・受付時間変更のお知らせ</h3>
+        <ul class="notice-list">
+          <li>令和7年12月5日（金）、12月6日（土）：学会参加のため休診</li>
+          <li>令和7年12月20日（土）：13時まで（午後休診）</li>
+          <li>令和7年12月28日（日）〜令和8年1月4日（日）：年末年始休診</li>
+        </ul>
+        <p class="muted">
+          ※詳細や最新情報は、事前にお電話でご確認ください。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="doctor" class="section">
+    <div class="section-header">
+      <h2 class="section-title">医師紹介</h2>
+      <span class="section-kicker">Doctor</span>
+    </div>
+    <div class="section-body two-column">
+      <div>
+        <p class="doctor-name">院長　中川 貴則</p>
+        <p class="doctor-title">日本眼科学会認定 眼科専門医</p>
+        <p style="font-size:13px; margin-bottom:8px;">
+          患者様との対話を重視し、丁寧で分かりやすい説明と、<br>
+          お一人おひとりに合わせた診療を心がけています。
+        </p>
+        <h3 style="font-size:13px; margin-bottom:4px;">所属学会</h3>
+        <div>
+          <span class="chip">日本コンタクトレンズ学会</span>
+          <span class="chip">日本眼科手術学会</span>
+          <span class="chip">日本眼科アレルギー学会</span>
+          <span class="chip">日本角膜学会</span>
+          <span class="chip">日本緑内障学会</span>
+          <span class="chip">日本網膜硝子体学会</span>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:13px; margin-bottom:4px;">学校医</h3>
+        <ul class="list-dot">
+          <li>富勢小学校</li>
+          <li>富勢東小学校</li>
+          <li>花野井小学校</li>
+          <li>田中中学校</li>
+          <li>市立柏高校</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="access" class="section">
+    <div class="section-header">
+      <h2 class="section-title">アクセス</h2>
+      <span class="section-kicker">Access</span>
+    </div>
+    <div class="section-body two-column">
+      <div>
+        <p>
+          〒277-0832<br>
+          千葉県柏市北柏１−１−３<br>
+          JR常磐線「北柏駅」南口よりすぐ
+        </p>
+        <h3 style="font-size:13px; margin:10px 0 4px;">お車でお越しの方へ</h3>
+        <ul class="list-dot">
+          <li>医院敷地内に4台分の駐車スペースがあります。</li>
+          <li>当院向かい側の駐車場には<strong>絶対に駐車しないで</strong>ください。</li>
+          <li>満車の場合は、近隣のコインパーキング等をご利用ください。</li>
+          <li>駅近くのため、定期的に駐車違反の取締りが行われています。路上駐車はご遠慮ください。</li>
+          <li>アイドリングはおやめください。</li>
+        </ul>
+      </div>
+      <div>
+        <div style="background:#e3f2fd; border-radius:14px; padding:10px 12px; font-size:13px;">
+          <strong>ご来院の注意事項</strong>
+          <ul class="list-dot" style="margin-top:6px;">
+            <li>医院の場所は1階です。</li>
+            <li>医療従事者に対する恫喝・威嚇・暴言・暴力・迷惑行為があった場合は、退室・警察への連絡・受診お断り等、厳しく対処いたします。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="notice" class="section">
+    <div class="section-header">
+      <h2 class="section-title">ご確認・お願い</h2>
+      <span class="section-kicker">Information</span>
+    </div>
+    <div class="section-body">
+      <ul class="notice-list">
+        <li>検索サイトで当院名を検索した際に表示されるスポンサーサイト等は、当院が推奨するものではありませんのでご注意ください。</li>
+        <li>お会計は現金のみの取り扱いとなります。</li>
+        <li>労災での受診（仕事中のケガ等）の場合、健康保険は使用できません。様式第5号などが必要になります。</li>
+        <li>診断書代は通常3,000円、複雑なものや保険会社提出用の診断書は5,000円となります。</li>
+        <li>患者様または付き添いの方への説明において、小学校高学年以上の日本語理解能力が必要となる場合があります。通訳が必要かどうかは事前に電話でご確認ください。</li>
+        <li>待合室での順番は、受付→診察のみの方と、受付→検査→診察の方がいらっしゃるため、常に順不同となります。順番が前後することを気にされる方は、他施設の受診をご検討ください。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contactlens" class="section">
+    <div class="section-header">
+      <h2 class="section-title">コンタクトレンズについて</h2>
+      <span class="section-kicker">Contact Lenses</span>
+    </div>
+    <div class="section-body two-column">
+      <div>
+        <p>
+          現在、<strong>コンタクトレンズが初めての方</strong>の対応は一時休止しております。<br>
+          眼鏡処方についても、現在は受付を休止しております。
+        </p>
+        <p style="margin-top:6px; font-size:13px;">
+          近視抑制治療薬「リジュセア点眼」が発売されていますが、保険適応外となるため、<br>
+          診察代・薬代ともに自由診療（10割負担）となります。こども医療費は使用できません。<br>
+          また、保険診療と自由診療を同日に行うことはできません。
+        </p>
+        <p class="muted">
+          ※近視抑制治療のみ予約制（自由診療枠）を設けています。詳細はお問い合わせください。
+        </p>
+      </div>
+      <div>
+        <h3 style="font-size:13px; margin-bottom:4px;">コンタクトレンズ処方の注意点</h3>
+        <ul class="list-dot">
+          <li>診察料がかかります。</li>
+          <li>定期検査（3ヶ月ごと）の受診をお願いいたします。</li>
+          <li>ソフトコンタクトレンズの処方箋発行は可能です。</li>
+          <li>一部メーカー（シード以外）のハードレンズには対応しておりません。</li>
+          <li>使い捨てではないソフトレンズや当院にないレンズのトライアル・処方はできません。</li>
+        </ul>
+        <p class="muted">
+          ※取り扱いレンズの詳細リストは、院内掲示またはスタッフまでお問い合わせください。
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 北かしわ眼科</div>
+    <div>このページの内容は予告なく変更となる場合があります。最新情報はお電話でご確認ください。</div>
+  </div>
+</footer>
+</body>
+</html>
